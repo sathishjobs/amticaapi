@@ -7,7 +7,7 @@ const devConfig = {
   };
   
   const prodConfig = {
-    MONGO_URL: 'mongodb://<sathish-mirra>:<node123>@ds045087.mlab.com:45087/udaanticketbookingapi',
+    MONGO_URL: `mongodb://sathish-mirra:node123@ds131903.mlab.com:31903/udaanchallange`,
   };
   
   const defaultConfig = {
