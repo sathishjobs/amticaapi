@@ -15,7 +15,7 @@
     "udaanChallange"
   ],
   "author": "sathish kumar",
-  "license": "ISC", 
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/sathishjobs/udaanChallange/issues"
   },
@@ -35,5 +35,8 @@
   },
   "engines": {
     "node": ">7.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
   }
 }
