@@ -59,13 +59,14 @@ module.exports.reserveScreen = (req, res) => {
                 error: true,
                 message: `${key} Seat not found in ${data.name} screen`
               });
-
+            let reservedSeats = [];
             req.body.seats[key].forEach((value, index) => {
               seatInto.unReservedSeats = seatInto.unReservedSeats.filter(
                 e => e !== value
               );
-              seatInto.reservedSeats.push(value);
+              reservedSeats.push(value);
             });
+            seatInto.reservedSeats = reservedSeats;
           }
         }
         //update the reserved and unserved tickets info to the db
