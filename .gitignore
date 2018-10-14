@@ -1,0 +1,26 @@
+/dist/
+/yarn.lock
+
+# dependencies
+/node_modules/
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.vscode
+
+/assets/images/banners/*
+/assets/images/news/*
+/assets/images/profiles/*
+/assets/images/result/*
+/assets/images/starPhotos/*
+/assets/images/achievements/*

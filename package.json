@@ -1,0 +1,36 @@
+{
+  "name": "udaan",
+  "version": "1.0.0",
+  "description": "udaan api development",
+  "main": "app.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sathishjobs/udaanChallange.git"
+  },
+  "keywords": [
+    "udaanChallange"
+  ],
+  "author": "sathish kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sathishjobs/udaanChallange/issues"
+  },
+  "homepage": "https://github.com/sathishjobs/udaanChallange#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.4",
+    "express-validation": "^1.0.2",
+    "helmet": "^3.14.0",
+    "http-status": "^1.2.0",
+    "joi": "^13.7.0",
+    "mongoose": "^5.3.3",
+    "morgan": "^1.9.1"
+  }
+}
