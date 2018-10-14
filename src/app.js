@@ -1,7 +1,7 @@
 let express = require("express");
 let constants = require("./config/constants");
 let middleWareConfig = require("./config/middlewares");
-
+let path = require('path');
 //link database config
 require("./config/database");
 
@@ -15,7 +15,7 @@ middleWareConfig(app);
 
 
 app.get('/',(req,res)=>{
-    res.json({msg:'Udaan Challange'});
+  res.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
 app.use("/screens/",bookingRoutes.routes);
