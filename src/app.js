@@ -5,14 +5,20 @@ let middleWareConfig = require("./config/middlewares");
 //link database config
 require("./config/database");
 
+//import booking routes
+let bookingRoutes = require("./bookingModule/booking.routes");
+
 const app = express();
 
 //link middleware to app
 middleWareConfig(app);
 
+
 app.get('/',(req,res)=>{
-    res.json({msg:'Hello world'});
+    res.json({msg:'Udaan Challange'});
 })
+
+app.use("/screens/",bookingRoutes.routes);
 
 function errorHandler(err, req, res, next) {
     res.status(400);

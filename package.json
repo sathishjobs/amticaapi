@@ -4,7 +4,7 @@
   "description": "udaan api development",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node src/app.js",
+    "start": "NODE_ENV=production nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,7 +15,7 @@
     "udaanChallange"
   ],
   "author": "sathish kumar",
-  "license": "ISC",
+  "license": "ISC", 
   "bugs": {
     "url": "https://github.com/sathishjobs/udaanChallange/issues"
   },

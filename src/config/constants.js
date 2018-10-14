@@ -1,9 +1,9 @@
 const devConfig = {
-    MONGO_URL: 'mongodb://localhost/udaanticketbookingapi',
+    MONGO_URL: 'mongodb://localhost:27017/udaanticketbookingapi',
   };
   
   const testConfig = {
-    MONGO_URL: 'mongodb://localhost/udaanticketbookingapitest',
+    MONGO_URL: 'mongodb://localhost:27017/udaanticketbookingapitest',
   };
   
   const prodConfig = {
@@ -26,7 +26,6 @@ const devConfig = {
         return devConfig;
     }
   }
-  
   module.exports = {
     ...defaultConfig,
     ...envConfig(process.env.NODE_ENV),
