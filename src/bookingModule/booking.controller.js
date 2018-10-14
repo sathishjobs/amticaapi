@@ -75,7 +75,7 @@ module.exports.reserveScreen = (req, res) => {
           { new: true }
         );
         update.then(updateddata => {
-          return res.status(HTTPStatus.CREATED).json(updateddata);
+          return res.status(HTTPStatus.OK).json({requestStatus : `Successfully Reserved`,updateddata});
         });
       });
     } else {
@@ -96,7 +96,7 @@ module.exports.getUnservedSeatsByScreen = (req, res) => {
     let choice = req.query.choice;
     // get unreserved or reserved seat info by screen name
     if (screenTicketStatus) {
-      let seats = { seats: {} };
+      let seats = { availableSeats: {} };
       let getUnReservedSeats = Booking.findOne({ name: screenName });
       getUnReservedSeats.then(data => {
         if (!data)
@@ -108,14 +108,14 @@ module.exports.getUnservedSeatsByScreen = (req, res) => {
           // unreserved tickets seats by row
           if (screenTicketStatus === "unreserved") {
             if (data.seatInfo[key].unReservedSeats.length > 0)
-              seats["seats"][key] = data.seatInfo[key].unReservedSeats;
+              seats["availableSeats"][key] = data.seatInfo[key].unReservedSeats;
           } else if (screenTicketStatus === "reserved") {
             if (data.seatInfo[key].reservedSeats.length > 0)
-              seats["seats"][key] = data.seatInfo[key].reservedSeats;
+              seats["availableSeats"][key] = data.seatInfo[key].reservedSeats;
           }
         }
         //if no unreserved seats found return no seats found
-        if (Object.getOwnPropertyNames(seats.seats).length === 0) {
+        if (Object.getOwnPropertyNames(seats.availableSeats).length === 0) {
           return res
             .status(HTTPStatus.BAD_REQUEST)
             .json({ error: true, message: "No UnReserved Seats Found" });
@@ -161,8 +161,8 @@ module.exports.getUnservedSeatsByScreen = (req, res) => {
           let forwardAsileStatus = false;
           //check available seats forward
           //ex if choice A4 numofseats : 3 result should be A{4,5,6}
-          startPosition = parseInt(seatNumber) - 1;
-          endPosition = parseInt(seatNumber) - 1 + parseInt(numSeats);
+          startPosition = (parseInt(seatNumber) - 1);
+          endPosition = ((parseInt(seatNumber) - 1) + parseInt(numSeats));
           isAvailable = getrow.unReservedSeats.slice(
             startPosition,
             endPosition
