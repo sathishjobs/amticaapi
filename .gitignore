@@ -18,9 +18,3 @@
 .env.production.local
 .vscode
 
-/assets/images/banners/*
-/assets/images/news/*
-/assets/images/profiles/*
-/assets/images/result/*
-/assets/images/starPhotos/*
-/assets/images/achievements/*
