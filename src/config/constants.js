@@ -1,20 +1,24 @@
 const devConfig = {
-    MONGO_URL: 'mongodb://localhost:27017/udaanticketbookingapi',
+    MONGO_URL: 'mongodb://localhost:27017/amticaChallange',
   };
   
   const testConfig = {
-    MONGO_URL: 'mongodb://localhost:27017/udaanticketbookingapitest',
+    MONGO_URL: 'mongodb://localhost:27017/amticaChallange',
   };
   
   const prodConfig = {
-    MONGO_URL: `mongodb://sathish-mirra:node123@ds131903.mlab.com:31903/udaanchallange`,
+    // MONGO_UR `mongodb://sathish-mirra:node123@ds131903.mlab.com:31903/amticaChallange`,
+    MONGO_URL : `mongodb://sathish:mirra123!@ds047940.mlab.com:47940/amtica`,
   };
   
   const defaultConfig = {
+    JWTSecret : 'amtica123!',
     PORT: process.env.PORT || 9090,
   };
   
   function envConfig(env) {
+    console.log("Env from envConfig");
+    console.log(env);
     switch (env) {
       case 'development':
         return devConfig;

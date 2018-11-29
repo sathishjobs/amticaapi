@@ -2,11 +2,12 @@ let express = require("express");
 let constants = require("./config/constants");
 let middleWareConfig = require("./config/middlewares");
 let path = require('path');
+
 //link database config
 require("./config/database");
 
 //import booking routes
-let bookingRoutes = require("./bookingModule/booking.routes");
+let userRoutes = require("./userModule/user.routes");
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.get('/',(req,res)=>{
   res.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
-app.use("/screens/",bookingRoutes.routes);
+app.use("/user/",userRoutes.routes);
 
 function errorHandler(err, req, res, next) {
     res.status(400);
