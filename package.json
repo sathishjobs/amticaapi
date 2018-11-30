@@ -4,7 +4,7 @@
   "description": "amtica api",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=production node src/app.js",
+    "start": "cross-env NODE_ENV=development node src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
