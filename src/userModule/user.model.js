@@ -46,8 +46,6 @@ UserSchema.methods = {
     return hashSync(password)
   },
   authenticateUser(password) {
-    console.log('Inside authenticate user');
-    console.log(password)
     return compareSync(password, this.password);
   },
   createToken(userId) {

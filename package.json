@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sathishjobs/udaanChallange.git"
+    "url": ""
   },
   "keywords": [
-    "udaanChallange"
+    "amticachallange"
   ],
   "author": "sathish kumar",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sathishjobs/udaanChallange/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/sathishjobs/udaanChallange#readme",
+  "homepage": "",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",

@@ -14,7 +14,6 @@ const jwtOpts = {
 const jwtStrategy = new Strategy(jwtOpts, async (payload, done) => {
   try {
     const user = await User.findById(payload._id);  
-    console.log(user);     
     if (!user) {
       return done(null, false);
     }

@@ -4,7 +4,6 @@ let UserModal = require("./user.model");
 
 module.exports.signIn = async (req, res) => {
   try {
-    console.log(req.body);
     const { email, password } = req.body;
     const user = await UserModal.findOne({ email });
     if (!user) {
@@ -21,14 +20,12 @@ module.exports.signIn = async (req, res) => {
 
 module.exports.signUp = async (req, res) => {
   try {
-    console.log('from here');
     // is user already found
     let existingUser = await UserModal.findOne({ email: req.body.email });
     if (existingUser)
       return res.status(HTTPStatus.CONFLICT).json({ error: 'true', field : "email", message: 'User already found!' });
     return res.status(HTTPStatus.CREATED).json(await UserModal.create(req.body));
   } catch (error) {
-    console.log(error);
     return res.status(HTTPStatus.BAD_REQUEST).json(Error);
   }
 }

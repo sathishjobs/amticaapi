@@ -17,9 +17,7 @@ const devConfig = {
   };
   
   function envConfig(env) {
-    console.log("Env from envConfig");
-    console.log(env);
-    switch (env) {
+      switch (env) {
       case 'development':
         return devConfig;
       case 'test':

@@ -6,7 +6,7 @@ let path = require('path');
 //link database config
 require("./config/database");
 
-//import booking routes
+//import user routes
 let userRoutes = require("./userModule/user.routes");
 
 const app = express();
