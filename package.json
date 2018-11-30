@@ -44,7 +44,7 @@
     "redux-thunk": "^2.3.0"
   },
   "engines": {
-    "node": ">8.12.0"
+    "node": "8.12.0"
   },
   "devDependencies": {
     "cross-env": "^5.2.0",
